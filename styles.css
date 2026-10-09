@@ -364,14 +364,11 @@ em {
   font-size: 29px;
 }
 
-.family-placeholder, .family-photo {
+.family-placeholder {
   margin: 36px auto 0;
   max-width: 670px;
   height: 310px;
   border-radius: 28px;
-}
-
-.family-placeholder {
   border: 2px dashed rgba(58, 49, 80, .28);
   background: rgba(255, 255, 255, .38);
   display: flex;
@@ -385,9 +382,20 @@ em {
 }
 
 .family-photo {
+  margin: 36px auto 0;
+  max-width: 480px;
   width: 100%;
-  object-fit: cover;
+  height: auto;
+  border-radius: 24px;
   display: block;
+  box-shadow: 0 16px 36px rgba(58, 49, 80, .14);
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.family-photo:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px rgba(58, 49, 80, .2);
 }
 
 footer {
@@ -583,8 +591,12 @@ button {
   .caption h3 {
     font-size: 16px;
   }
-  .family-placeholder, .family-photo {
+  .family-placeholder {
     height: 210px;
+  }
+  .family-photo {
+    max-width: 100%;
+    border-radius: 18px;
   }
   footer {
     gap: 15px;

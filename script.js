@@ -68,6 +68,19 @@ photos.forEach((photo, idx) => {
   wrap.addEventListener('click', () => openLightbox(idx));
 });
 
+const familyPhoto = document.querySelector('.family-photo');
+if (familyPhoto) {
+  familyPhoto.addEventListener('click', () => {
+    currentIndex = -1;
+    lightboxImg.src = familyPhoto.src;
+    lightboxImg.alt = familyPhoto.alt || 'Charvi with family';
+    lightboxCap.textContent = 'Charvi with family — Our little girl is one!';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
 lightboxClose?.addEventListener('click', closeLightbox);
 lightboxPrev?.addEventListener('click', (e) => {
   e.stopPropagation();
